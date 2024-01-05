@@ -5,7 +5,7 @@ Learning by Go Lang by example
 I started learning GoLang in case libmem gets ported to it. There are some things I'm finding odd about it:
 - Resolving dependencies on the source code (e.g `import github.com/someuser/somerepo`). I think there should be a central repository like Rust's crates.io or Python's PyPi, that would avoid package name conflicts and fetching the same package from different URLs
 - The compiler throws errors on unused imports and unused variables instead of warnings. Let's say I imported all of the modules I want to use first, and then I started coding. The compiler won't let me run the code because of unused modules. Official FAQ tells you to "pretend" you're using the module, which I didn't like: `var _ = unused.Item  // TODO: Delete before committing!` (what if you forget to delete it later?)
-From (GoLang FAQ)[https://go.dev/doc/faq#unused_variables_and_imports]:
+From [GoLang FAQ](https://go.dev/doc/faq#unused_variables_and_imports):
 ![unused](unused.png)
 - The function `fmt.Println` inserts spaces automatically for you between each argument. I don't get why, I might be trying to just append some stuff that doesn't have spaces.
 - It has pointers, and it seems rather common to do operations with them. Almost like in C. I was reading an example of generic types in `gobyexample.com` and there is a sample code for a linked list. It is practically the same thing as the C version. I think pointers should be avoided on languages like this, they only bring trouble. I'm pretty sure Python passes everything (except primitive types) as reference, so if you want to pass an argument to a function that needs to be modified, pass it as a class, because the class will always be a reference. This doesn't seem to be true in Go.

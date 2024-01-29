@@ -53,6 +53,8 @@ In Go, this is not the case. You just implement it as if you were defining norma
 
 - Strange keywords. First example I would say is the keyword `range`. It can do many different things, like iterating through a map, arrays and slices, and variadic arguments. What it can't do is iterate through a range of numbers. So why is it called range? Second example is the keyword `rune`. They purposefully avoid using the word `char` (for character) because a rune is supposed to represent Unicode code points instead of characters - I think this is overthinking about semantics.
 
+- Quirky time formatting. The Go standard library doesn't format time using the very much standardized strftime format (`%a, %d %b %Y`). Instead, it tells you to format a specific date. The strftime format I mentioned before would become this: `Mon, 02 Jan 2006`. This looks harder to parse, longer, and also is not standardized.
+
 These things aside, there are some good things I like about it:
 - It has a very powerful standard library, which I think is the major selling point for the language. Unlike Rust, it has a very robust standard library with so many different modules for everyday use. I think that is a positive thing for GoLang.
 - The goroutines are a pretty interesting implementation of asynchronous communication. It is built in the language, and everything is very simple. Another plus for it.
